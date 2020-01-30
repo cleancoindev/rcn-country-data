@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const helmet = require('helmet');
 const app = express();
 const {PORT, NODE_ENV, CORS_ORIGIN_AVAILABLE} = process.env;
 
 // responses config
 app.use(bodyParser.json());
+app.use(helmet());
 app.use(cors({
   origin: JSON.parse(CORS_ORIGIN_AVAILABLE),
   optionsSuccessStatus: 200
