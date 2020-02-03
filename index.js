@@ -7,15 +7,11 @@ const {PORT, NODE_ENV} = process.env;
 
 // responses config
 app.use(bodyParser.json());
-<<<<<<< HEAD
-app.use(cors());
-=======
 app.use(helmet());
 app.use(cors({
-  origin: JSON.parse(CORS_ORIGIN_AVAILABLE),
+  origin: '*',
   optionsSuccessStatus: 200
 }));
->>>>>>> fe1210cfa9f6ef0e6e5b3068e436cf3e5e084b3c
 
 // app routes
 app.get('/', (req, res) => {
